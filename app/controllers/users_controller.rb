@@ -32,6 +32,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
+      UsersMailer.user_edited(@user).deliver_now
       redirect_to users_admin_index_path
     else
       render 'edit'
