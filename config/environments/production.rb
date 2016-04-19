@@ -87,8 +87,8 @@ Rails.application.configure do
     port: "587",
     domain: "smtp.gmail.com",
     authentication: :plain,
-    user_name: "my.test.task.info@gmail.com",
-    password: "asd951753",
+    user_name: "ishop.info.ua@gmail.com",#"my.test.task.info@gmail.com",
+    password: "qwe9617503",#"asd951753",
     enable_starttls_auto: true
   }
 
