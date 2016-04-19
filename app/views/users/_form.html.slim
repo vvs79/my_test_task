@@ -1,0 +1,14 @@
+= render 'shared/error_messages', object: f.object
+= f.label :first_name, "First name"
+= f.text_field :first_name, autofocus: true, placeholder: "First name", class: 'form-control'
+= f.label :last_name, "Last name"
+= f.text_field :last_name, placeholder: "Last name", class: 'form-control'
+= f.label :login, "Login"
+= f.text_field :login, placeholder: "Login", class: 'form-control'
+= f.label :email, "Email"
+= f.email_field :email, placeholder: "Email", class: 'form-control'
+= f.label :password, "Password"
+= f.password_field :password, placeholder: "Password", class: 'form-control'
+= f.label :avatar, 'Avatar'
+= f.file_field :avatar
+= f.submit yield(:button_text), class: "btn btn-md btn-success col-md-4 col-md-offset-4"

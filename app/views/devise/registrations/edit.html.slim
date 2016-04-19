@@ -1,0 +1,26 @@
+- provide(:title, 'Профіль')
+.container.content-area
+  .intro-header
+    .intro-message
+      h2 Редагувати профіль
+      br
+      .form.col-md-4.col-md-offset-4
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+          = devise_error_messages!
+          = f.text_field :first_name, autofocus: true, placeholder: "First name", class: "form-control"
+          = f.text_field :last_name, autofocus: true, placeholder: "Last name", class: "form-control"
+          = f.text_field :login, autofocus: true, placeholder: "Login", class: "form-control"
+          = f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control"
+          i 
+            | (залишіть поля пустими, якщо не хочете змінювати пароль)
+          br
+          = f.password_field :password, autocomplete: "off", placeholder: "Новий пароль: 8 символів мінімум", class: "form-control"
+          = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Повторіть новий пароль", class: "form-control"
+          br
+          = f.password_field :current_password, autocomplete: "off", placeholder: "Ваш пароль, щоб підтвердити зміни", class: "form-control"
+          br
+          .actions.row
+            = f.submit "Редагувати", class: "btn btn-md btn-success col-xs-6 col-xs-offset-3"
+        br
+        //= link_to "Back", :back
+        br

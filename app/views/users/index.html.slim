@@ -1,0 +1,36 @@
+- provide(:title, 'All users')
+.container.content-area
+  h3.center
+    | All users
+  br
+  .row
+    = render 'layouts/messages'
+  br
+  .row
+    = render 'search_form_for'
+  br
+  .row
+    .col-sm-3  
+      = link_to 'Create user', new_users_admin_path, class: 'btn btn-md btn-success'
+  .center
+    .table-responsive
+      table.table.table-bordered.table-hover
+        tr.active
+          th.width_5
+          th.width_15
+            h5 Email
+          th.width_15
+            h5 Login
+          th.width_15
+            h5 First name
+          th.width_15
+            h5 Last name
+          th.width_15 colspan="3"
+            h5 Action
+        = render 'user'
+  - if @users.count > 10
+    br
+    .col-sm-12
+      .center
+        = will_paginate
+  br

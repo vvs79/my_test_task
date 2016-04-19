@@ -1,0 +1,17 @@
+- provide(:title, @user.email)
+.container.content-area
+  h3.center
+    | #{@user.email}
+    br
+    = image_tag(@user.avatar.url) if @user.avatar?
+  = render 'layouts/messages'
+  br
+  p
+    | Login: #{@user.login}
+  p
+    | First name: #{@user.first_name}
+  p
+    | Last name: #{@user.last_name}
+  p
+    = link_to users_admin_index_path, class: "btn btn-sm btn-info"
+      | All users

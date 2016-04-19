@@ -1,0 +1,25 @@
+- @users.each_with_index do |user, index|
+  tr.info
+    td.center
+      = image_tag user.avatar.url, height:'30px' if user.avatar?
+    td.center
+      = link_to users_admin_path(user)
+        = user.email
+    td.center
+      = link_to users_admin_path(user)
+        | #{user.login}
+    td.center
+      = link_to users_admin_path(user)
+        = user.first_name
+    td.center
+      = link_to users_admin_path(user)
+        = user.last_name
+    td.center
+      = link_to users_admin_path(user), rel: 'tooltip', title: 'Show', class: "btn btn-sm btn-info" do
+        user.glyphicon.glyphicon-ok-circle
+    td.center
+      = link_to edit_users_admin_path(user), rel: 'tooltip', title: 'Edit', class: "btn btn-sm btn-warning" do
+        user.glyphicon.glyphicon-edit
+    td.center
+      = link_to users_admin_path(user), method: :delete, data: { confirm: 'Delete user?' }, rel: 'tooltip', title: 'Delete', class: "btn btn-sm btn-danger" do
+        user.glyphicon.glyphicon-remove

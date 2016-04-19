@@ -1,0 +1,5 @@
+form.input-group
+  = search_form_for @search, url: users_admin_index_path do |f|
+    = f.text_field :email_or_login_or_first_name_or_last_name_cont, placeholder: "Search user ...", class: "form-control"
+    span.input-group-btn
+      = f.submit "Search", class: 'btn btn-default type="button"'

@@ -1,0 +1,8 @@
+- provide(:title, 'New user')
+- provide(:button_text, 'Create user')
+.container.content-area
+  h1.center
+    | New user
+  .form-group
+    = form_for @user, url: users_admin_index_path(@user), html: { multipart: true } do |f|  
+      = render 'form', f: f
