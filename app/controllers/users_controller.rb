@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    
+    UsersMailer.user_destroyed(@user).deliver_now
     @user.destroy
     redirect_to :back
   end
