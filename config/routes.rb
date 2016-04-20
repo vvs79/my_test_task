@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   #   get "/users/sign_out" => "devise/sessions#destroy"
   # end
 
-  resources :users_admin, controller: 'users'
+  resources :users_admin, controller: 'users' do
+    get :order_by_login, on: :collection
+    get :order_by_email, on: :collection
+    get :order_by_fname, on: :collection
+    get :order_by_lname, on: :collection
+  end
 
   get '*a' => 'users#404'
 

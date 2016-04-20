@@ -18,13 +18,17 @@
         tr.active
           th.width_5
           th.width_15
-            h5 Email
+            = link_to order_by_email_users_admin_index_path, rel: 'tooltip', title: 'Order by email'
+              h5 Email
           th.width_15
-            h5 Login
+            = link_to order_by_login_users_admin_index_path, rel: 'tooltip', title: 'Order by login'
+              h5 Login
           th.width_15
-            h5 First name
+            = link_to order_by_fname_users_admin_index_path, rel: 'tooltip', title: 'Order by first name'
+              h5 First name
           th.width_15
-            h5 Last name
+            = link_to order_by_lname_users_admin_index_path, rel: 'tooltip', title: 'Order by last name'
+              h5 Last name
           th.width_15 colspan="3"
             h5 Action
         = render 'user'
